@@ -3,13 +3,13 @@ using namespace std;
 class Solution
 {
 public:
-  int search(vector<int> &nums, int target)
+  int searchInsert(vector<int> &nums, int target)
   {
     int n = nums.size();
-    int mid, low = 0, high = n - 1;
+    int low = 0, high = n - 1;
     while (low <= high)
     {
-      mid = (low + high) / 2;
+      int mid = (low + high) / 2;
       if (nums[mid] == target)
       {
         return mid;
@@ -23,24 +23,15 @@ public:
         high = mid - 1;
       }
     }
-    return -1;
+    return low;
   }
 };
 int main()
 {
   Solution sol;
-  vector<int> nums = {-1, 0, 3, 5, 7, 9};
+  vector<int> nums = {1, 3, 5, 6};
   int target = 7;
-  int index = sol.search(nums, target);
-  cout << "The index is = " << index << endl;
-  return 0;
-}
-int main()
-{
-  Solution sol;
-  vector<int> nums = {-1, 0, 3, 5, 7, 9};
-  int target = 7;
-  int index = sol.search(nums, target);
+  int index = sol.searchInsert(nums, target);
   cout << "The index is = " << index << endl;
   return 0;
 }
