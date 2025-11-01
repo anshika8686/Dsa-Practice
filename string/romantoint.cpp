@@ -27,6 +27,6 @@ int main()
   Solution sol;
   string s = "MCMXCIV";
   int ans = sol.romanToInt(s);
-  cout << "The interger value of this roman numeral is" << ans << endl;
+  cout << "The interger value of this roman numeral is: " << ans << endl;
   return 0;
 }

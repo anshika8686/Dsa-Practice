@@ -35,12 +35,3 @@ int main()
   cout << "The index is = " << index << endl;
   return 0;
 }
-int main()
-{
-  Solution sol;
-  vector<int> nums = {-1, 0, 3, 5, 7, 9};
-  int target = 7;
-  int index = sol.search(nums, target);
-  cout << "The index is = " << index << endl;
-  return 0;
-}
