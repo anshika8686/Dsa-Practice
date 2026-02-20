@@ -50,3 +50,12 @@ vector<int>nse(vector<int>&arr){
     }
 };
 // ; tc=o(5n) sc=o(5n)
+int main(){
+    Solution sol;
+
+    vector<int> arr = {3, 1, 2, 4};
+
+    cout << sol.sumSubarrayMins(arr) << endl;
+
+    return 0;
+}

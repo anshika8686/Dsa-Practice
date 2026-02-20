@@ -119,3 +119,12 @@ long long maximum(vector<int>&nums){
         return diff;
     }
 };
+int main(){
+    Solution sol;
+
+    vector<int> arr = {3, 1, 2, 4};
+
+    cout << sol.subArrayRanges(arr) << endl;
+
+    return 0;
+}
