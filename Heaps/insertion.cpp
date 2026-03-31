@@ -40,20 +40,21 @@ public:
         int i = 1;
         while (true)
         {
-            left_child = 2 * i;
-            right_child = 2 * i + 1;
-            if (left_child < size && heap[i] < heap[left_child] && heap[left_child]>heap[right_child])
+            int largest=i;
+            left_child = 2 * largest;
+            right_child = 2 * largest + 1;
+            if (left_child <= size && heap[largest] < heap[left_child] )
             {
-                swap(heap[i], heap[left_child]);
-                i = left_child;
+                largest = left_child;
             }
-            else if (right_child < size && heap[i] < heap[right_child] && heap[left_child]<heap[right_child])
+            if (right_child <= size && heap[largest] < heap[right_child])
             {
-                swap(heap[i], heap[right_child]);
-                i = right_child;
+                largest = right_child;
             }
-            else
-            {
+            if(largest!=i){ // chances of swapping is possible
+                swap(heap[i],heap[largest]);
+                i=largest;
+            }else{
                 return;
             }
         }
@@ -61,9 +62,9 @@ public:
     void print()
     {
         int size = heap.size() - 1;
-        for (int i = 1; i <= size; i++)
+        for (int largest = 1; largest <= size; largest++)
         {
-            cout << heap[i] << " ";
+            cout << heap[largest] << " ";
         }
     }
 };
